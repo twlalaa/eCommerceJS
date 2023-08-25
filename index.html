@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>E-commerce #lala</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <ul class="header-left">
+        <li id="logo"><a href="index.html">sneakers</a></li>
+        <li><a href="">Collections</a></li>
+        <li><a href="">Men</a></li>
+        <li><a href="">Women</a></li>
+        <li><a href="">About</a></li>
+        <li><a href="">Contract</a></li>
+      </ul>
+      <div class="header-right">
+        <button id="cart">
+          <img src="images/icon-cart.svg" alt="" /><span id="item-count"
+            >0</span
+          >
+        </button>
+        <img src="images/image-avatar.png" id="avatar" alt="" />
+      </div>
+    </header>
+    <main>
+      <div class="main-left">
+        <img id="main-img" src="images/image-product-1.jpg" alt="" />
+        <div class="thumbnails">
+          <div><img src="images/image-product-1-thumbnail.jpg" alt="" /></div>
+          <div><img src="images/image-product-2-thumbnail.jpg" alt="" /></div>
+          <div><img src="images/image-product-3-thumbnail.jpg" alt="" /></div>
+          <div><img src="images/image-product-4-thumbnail.jpg" alt="" /></div>
+        </div>
+      </div>
+      <div class="main-right">
+        <p id="p-1">Sneaker Company</p>
+        <p id="p-2">Fall Limited Edition Sneakers</p>
+        <p id="p-3">
+          These fall edition sneakers are your perfect casual wear companion.
+          Featuring a durable rubber outer sole, they'll withstand everything
+          the weather can offer.
+        </p>
+        <div class="prices">
+          <p id="price">$125.00</p>
+          <span>50%</span>
+        </div>
+        <div class="discount">$250.00</div>
+        <div class="main-actions">
+          <div class="counter">
+            <span id="minusBtn">-</span>
+            <p id="counter">0</p>
+            <span id="plusBtn">+</span>
+          </div>
+          <button id="addToCartBtn">
+            <img src="images/icon-cart.svg" alt="" />Add to cart
+          </button>
+        </div>
+      </div>
+    </main>
+    <div class="main-modal hidden" id="mainModal">
+      <div class="overlay" id="overlay"></div>
+      <div class="modal">
+        <div class="x-btn" id="xBtn"><i class="fa-solid fa-xmark"></i></div>
+        <div class="modal-imgs">
+          <div class="slider-main">
+            <button id="leftBtn" class="sliderBtn">
+              <i class="fa-solid fa-angles-left"></i>
+            </button>
+            <img id="modal-main-img" src="images/image-product-1.jpg" alt="" />
+            <button id="rightBtn" class="sliderBtn">
+              <i class="fa-solid fa-angles-right"></i>
+            </button>
+          </div>
+          <div class="mini-modal-imgs">
+            <div><img src="images/image-product-1-thumbnail.jpg" alt="" /></div>
+            <div><img src="images/image-product-2-thumbnail.jpg" alt="" /></div>
+            <div><img src="images/image-product-3-thumbnail.jpg" alt="" /></div>
+            <div><img src="images/image-product-4-thumbnail.jpg" alt="" /></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

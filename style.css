@@ -1,0 +1,313 @@
+@import url("https://fonts.googleapis.com/css2?family=Edu+SA+Beginner:wght@400;500;600;700&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  padding-inline: 80px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 0px;
+  border-bottom: 1px rgba(128, 128, 128, 0.247) solid;
+}
+
+.header-left {
+  display: flex;
+  list-style: none;
+  align-items: center;
+}
+
+.header-left a {
+  color: hsl(220, 13%, 13%);
+}
+
+.header-left li:not(:last-child) {
+  margin-right: 25px;
+}
+
+.header-left li a {
+  font-size: "Poppins", sans-serif;
+  text-decoration: none;
+  color: hsl(219, 9%, 45%);
+}
+
+#avatar {
+  width: 40px;
+}
+
+#logo {
+  font-size: 26px;
+  font-weight: 600;
+  margin-right: 40px;
+}
+
+#logo a {
+  color: #000;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+}
+
+#cart {
+  background: none;
+  border: none;
+  margin-right: 30px;
+  cursor: pointer;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  padding: 80px 50px;
+  z-index: 0;
+}
+
+#main-img {
+  width: 400px;
+  margin-bottom: 15px;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.thumbnails {
+  display: flex;
+  justify-content: space-between;
+}
+
+.thumbnails img {
+  width: 85px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.thumbnails div {
+  height: 87px;
+  border-radius: 15px;
+  overflow: hidden;
+  border: 2px solid transparent;
+}
+
+.opacity {
+  opacity: 0.5;
+}
+
+.border {
+  border: 2px solid hsl(26, 100%, 55%);
+}
+
+.main-right {
+  padding: 50px 110px;
+}
+
+#p-1 {
+  color: hsl(26, 100%, 55%);
+  /* hsl(25, 100%, 94%); */
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+#p-2 {
+  font-size: 40px;
+  font-weight: 600;
+  color: hsl(220, 13%, 13%);
+  width: 500px;
+  margin-bottom: 20px;
+}
+
+#p-3 {
+  color: hsl(219, 9%, 45%);
+  width: 500px;
+  margin-bottom: 20px;
+}
+
+.prices {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+#price {
+  font-size: 24px;
+  font-weight: 600;
+  color: hsl(220, 13%, 13%);
+  margin-right: 15px;
+}
+
+.prices span {
+  padding: 2px 5px;
+  font-weight: 600;
+  border-radius: 5px;
+  font-size: 14px;
+  background-color: hsl(25, 100%, 94%);
+  color: hsl(26, 100%, 55%);
+}
+
+.discount {
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: line-through;
+  color: hsl(220, 14%, 75%);
+  margin-bottom: 25px;
+}
+
+.main-actions {
+  display: flex;
+  align-items: center;
+}
+
+.counter {
+  display: flex;
+  font-weight: 700;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 26px;
+  color: hsl(26, 100%, 55%);
+  padding: 6px 20px;
+  background-color: hsl(223, 64%, 98%);
+  border-radius: 10px;
+  width: 180px;
+  margin-right: 20px;
+}
+
+.counter p {
+  font-weight: 600;
+  font-size: 20px;
+  color: hsl(220, 13%, 13%);
+}
+
+.counter span {
+  cursor: pointer;
+}
+
+#addToCartBtn {
+  background-color: hsl(26, 100%, 55%);
+  color: #fff;
+  padding: 15px 50px;
+  display: flex;
+  align-items: center;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+#addToCartBtn img {
+  margin-right: 10px;
+}
+
+#cart {
+  position: relative;
+}
+
+#item-count {
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  padding: 0px 6px;
+  background-color: hsl(25, 100%, 94%);
+  color: hsl(26, 100%, 55%);
+  border-radius: 10px;
+  font-weight: 600;
+}
+
+.main-modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1;
+}
+
+.modal {
+  color: #fff;
+  z-index: 5;
+}
+
+#xBtn {
+  font-size: 24px;
+  cursor: pointer;
+  text-align: right;
+}
+
+.slider-main {
+  position: relative;
+}
+
+#modal-main-img {
+  width: 400px;
+  margin-bottom: 15px;
+  border-radius: 15px;
+}
+
+.mini-modal-imgs {
+  display: flex;
+  justify-content: space-between;
+}
+
+.mini-modal-imgs img {
+  width: 85px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.mini-modal-imgs div {
+  height: 87px;
+  border-radius: 15px;
+  overflow: hidden;
+  border: 2px solid transparent;
+}
+
+.sliderBtn {
+  cursor: pointer;
+  border: none;
+  background: none;
+  color: #fff;
+  font-size: 24px;
+}
+
+.sliderBtn i {
+  padding: 3px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+#leftBtn {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#rightBtn {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.hidden {
+  display: none;
+}

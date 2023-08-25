@@ -16,6 +16,22 @@ const miniImgsModal = document.querySelectorAll(".mini-modal-imgs div img");
 
 const miniImgsModalDivs = document.querySelectorAll(".mini-modal-imgs div");
 
+const minusBtn = document.getElementById("minusBtn");
+
+const plusBtn = document.getElementById("plusBtn");
+
+const counter = document.getElementById("counter");
+
+const itemCount = document.getElementById("item-count");
+
+const addToCartBtn = document.getElementById("addToCartBtn");
+
+const mainModal = document.getElementById("mainModal");
+
+const xBtn = document.getElementById("xBtn");
+
+const overlay = document.getElementById("overlay");
+
 const resetModalState = () => {
   miniImgsModal.forEach((t) => {
     t.classList.add("opacity");
@@ -52,12 +68,6 @@ thumbnails.forEach((pic, index) => {
   });
 });
 
-const minusBtn = document.getElementById("minusBtn");
-
-const plusBtn = document.getElementById("plusBtn");
-
-const counter = document.getElementById("counter");
-
 const increment = () => {
   counter.textContent++;
 };
@@ -72,10 +82,6 @@ plusBtn.addEventListener("click", increment);
 
 minusBtn.addEventListener("click", decrement);
 
-const itemCount = document.getElementById("item-count");
-
-const addToCartBtn = document.getElementById("addToCartBtn");
-
 let c = 0;
 
 addToCartBtn.addEventListener("click", () => {
@@ -83,12 +89,6 @@ addToCartBtn.addEventListener("click", () => {
   itemCount.textContent = c;
   counter.textContent = 0;
 });
-
-const mainModal = document.getElementById("mainModal");
-
-const xBtn = document.getElementById("xBtn");
-
-const overlay = document.getElementById("overlay");
 
 mainImg.addEventListener("click", () => {
   mainModal.classList.remove("hidden");

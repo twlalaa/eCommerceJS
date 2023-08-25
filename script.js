@@ -6,6 +6,34 @@ const thumbnailsBorders = document.querySelectorAll(".thumbnails div");
 
 const mainImg = document.getElementById("main-img");
 
+const modalMainImg = document.getElementById("modal-main-img");
+
+const leftBtn = document.getElementById("leftBtn");
+
+const rightBtn = document.getElementById("rightBtn");
+
+const miniImgsModal = document.querySelectorAll(".mini-modal-imgs div img");
+
+const miniImgsModalDivs = document.querySelectorAll(".mini-modal-imgs div");
+
+const resetModalState = () => {
+  miniImgsModal.forEach((t) => {
+    t.classList.add("opacity");
+  });
+  miniImgsModalDivs.forEach((t) => {
+    t.style.border = "2px solid transparent";
+  });
+};
+
+let modalImageDisplayedIndex;
+
+const addBorderAndClass = () => {
+  modalMainImg.src = `images/image-product-${modalImageDisplayedIndex}.jpg`;
+  miniImgsModalDivs[modalImageDisplayedIndex - 1].style.border =
+    "2px solid hsl(26, 100%, 55%)";
+  miniImgsModal[modalImageDisplayedIndex - 1].classList.remove("opacity");
+};
+
 thumbnails.forEach((pic, index) => {
   pic.addEventListener("click", (e) => {
     thumbnails.forEach((t) => {
@@ -15,6 +43,10 @@ thumbnails.forEach((pic, index) => {
       t.style.border = "2px solid transparent";
     });
     mainImg.src = `images/image-product-${index + 1}.jpg`;
+    modalMainImg.src = mainImg.src;
+    modalImageDisplayedIndex = Number(modalMainImg.src.split("-")[2][0]);
+    resetModalState();
+    addBorderAndClass();
     e.target.classList.add("opacity");
     thumbnailsBorders[index].style.border = "2px solid hsl(26, 100%, 55%)";
   });
@@ -74,34 +106,22 @@ overlay.addEventListener("click", () => {
   mainModal.classList.add("hidden");
 });
 
-const leftBtn = document.getElementById("leftBtn");
-
-const rightBtn = document.getElementById("rightBtn");
-
-const modalMainImg = document.getElementById("modal-main-img");
-
-const miniImgsModal = document.querySelectorAll(".mini-modal-imgs div img");
-
-leftBtn.addEventListener("click", () => {});
-
 rightBtn.addEventListener("click", () => {
-  let currentSrc = modalMainImg.src;
-  if (Number(currentSrc.split("-")[2][0]) < 4) {
-    modalMainImg.src = `images/image-product-${
-      Number(currentSrc.split("-")[2][0]) + 1
-    }.jpg`;
+  resetModalState();
+  if (modalImageDisplayedIndex < 4) {
+    modalImageDisplayedIndex++;
   } else {
-    modalMainImg.src = "images/image-product-1.jpg";
+    modalImageDisplayedIndex = 1;
   }
+  addBorderAndClass();
 });
 
 leftBtn.addEventListener("click", () => {
-  let currentSrc = modalMainImg.src;
-  if (Number(currentSrc.split("-")[2][0]) > 1) {
-    modalMainImg.src = `images/image-product-${
-      Number(currentSrc.split("-")[2][0]) - 1
-    }.jpg`;
+  resetModalState();
+  if (modalImageDisplayedIndex > 1) {
+    modalImageDisplayedIndex--;
   } else {
-    modalMainImg.src = "images/image-product-4.jpg";
+    modalImageDisplayedIndex = 4;
   }
+  addBorderAndClass();
 });
